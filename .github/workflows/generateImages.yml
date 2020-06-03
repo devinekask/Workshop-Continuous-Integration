@@ -34,7 +34,7 @@ jobs:
       run: node -v
 
     - name: Map aanmaken voor de images
-      run: mkdir builds
+      run: mkdir -p builds
 
     - name: generate all the images
       run: node build.js

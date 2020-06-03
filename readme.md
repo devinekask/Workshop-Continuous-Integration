@@ -1,3 +1,5 @@
+![Build images](https://github.com/devinekask/techworkshoptest/workflows/Build%20images/badge.svg)
+
 ## Colors
 
 ![#00695c](https://placehold.it/15/00695c/000000?text=+)
