@@ -47,9 +47,9 @@ jobs:
         
     - name: Push changes # push the output folder to your repo
       uses: ad-m/github-push-action@master
-      branch: 'gh-pages'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: 'gh-pages'
 
     - name: Deploy to GitHub Pages
       if: success()
