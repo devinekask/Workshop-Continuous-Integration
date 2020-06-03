@@ -38,3 +38,14 @@ jobs:
 
     - name: generate all the images
       run: node build.js
+    
+    - name: Commit imges 
+      run: |
+        git config --local user.name "action"
+        git add ./images
+        git commit -m "Generated images"
+        
+    - name: Push changes # push the output folder to your repo
+      uses: devinekask/techworkshoptest@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
