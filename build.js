@@ -13,7 +13,7 @@ const createImageFromScript = async (file, ctx) => {
   ctx = draw(ctx);
 
   const filename = path.parse(file).name;
-  const out = fs.createWriteStream(`./images/${filename}.png`);
+  const out = fs.createWriteStream(`./builds/${filename}.png`);
   const stream = canvas.createPNGStream();
   stream.pipe(out);
   out.on("finish", () =>
