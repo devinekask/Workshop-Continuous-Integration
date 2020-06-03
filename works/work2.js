@@ -1,7 +1,21 @@
 const draw = function (ctx) {
-  ctx.fillStyle = "green";
-  ctx.arc(50, 50, 40, 0, Math.PI * 2);
-  ctx.fill();
+  const colors = [
+    "#00695c",
+    "#ef6c00",
+    "#0d47a1",
+    "#2196f3",
+    "#b71c1c",
+    "#4fc3f7",
+    "#4fc3f7",
+  ];
+
+  colors.forEach((color, index) => {
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.arc(50, 50, 45 - index * 5, 0, Math.PI * 2);
+    ctx.stroke();
+  });
+
   return ctx;
 };
 
