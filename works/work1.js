@@ -1,5 +1,5 @@
 const draw = function (ctx) {
-  ctx.fillStyle = "blue";
+  ctx.fillStyle = "pink";
   ctx.fillRect(10, 10, 20, 20);
   ctx.fillRect(80, 10, 20, 20);
   ctx.fillRect(80, 80, 20, 20);
