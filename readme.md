@@ -1,5 +1,9 @@
 ![Build images](https://github.com/devinekask/techworkshoptest/workflows/Build%20images/badge.svg)
 
+## Hoe kan ik een oplossing toevoegen?
+
+Maak een fork van de repository, voeg jouw oplossing toe (bv: `333/<github handle>/index.html` + `333/<github handle>/solution.js`))
+
 ## Colors
 
 ![#00695c](https://placehold.it/15/00695c/000000?text=+)
