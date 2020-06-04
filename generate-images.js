@@ -6,6 +6,10 @@ const solutionsPath = "./solutions";
 const canvas = nc.createCanvas(100, 100);
 const ctx = canvas.getContext("2d");
 
+if (!fs.existsSync("./build")) {
+  fs.mkdirSync("./build");
+}
+
 const createImageFromScript = async (file, ctx) => {
   const { default: draw } = await import(`./${file}`);
   ctx.clearRect(0, 0, 100, 100);
@@ -15,7 +19,7 @@ const createImageFromScript = async (file, ctx) => {
 
   const parts = regex.exec(file);
   const filename = `${parts[1]}-${parts[2]}`.toLowerCase();
-  const out = fs.createWriteStream(`./builds/${filename}.png`);
+  const out = fs.createWriteStream(`./build/${filename}.png`);
   const stream = canvas.createPNGStream();
   stream.pipe(out);
   out.on("finish", () =>
