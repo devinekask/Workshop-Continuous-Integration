@@ -42,6 +42,7 @@ Laat niet na om een oplossing toe te voegen voor een instructie die al opgelost 
 - Een lijn is 1px breed
 - Een `puntje` heeft een straal (radius) van 1 à 2
 - Een `stip` heeft een straal (radius) van 4 à 5
+- Een `bol` heeft een straal (radius) van >10
 - Marges/spacers zijn meestal een veelvoud van 5
 
 ## Kleuren
