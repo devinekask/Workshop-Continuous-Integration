@@ -34,7 +34,7 @@ jobs:
         run: npm run build
 
       - name: Copy styles
-        run: cp style/* build/
+        run: mkdir -p build/style && cp style/* build/style/
 
       - name: Copy solutions
         run: mkdir -p build/solutions && cp -R solutions/* build/solutions/
