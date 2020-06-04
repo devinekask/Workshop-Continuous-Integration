@@ -44,6 +44,7 @@ const createImageFromScript = async (file, ctx) => {
   const stream = canvas.createPNGStream();
   stream.pipe(out);
   await finished(out);
+  console.log(`${filename} generated`);
   return filename;
 };
 
@@ -83,6 +84,7 @@ const generateIndexHtml = (images) => {
   </html>
   `;
   fs.writeFileSync("build/index.html", html);
+  console.log(`HTML page generated with ${images.length} images`);
 };
 
 init();
