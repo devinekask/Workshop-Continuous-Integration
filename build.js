@@ -27,6 +27,7 @@ const init = async () => {
         return { link: file.replace("solution.js", "index.html"), image };
       })
   );
+  shuffle(processed);
   generateIndexHtml(processed);
 };
 
@@ -86,5 +87,12 @@ const generateIndexHtml = (images) => {
   fs.writeFileSync("build/index.html", html);
   console.log(`HTML page generated with ${images.length} images`);
 };
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
 init();
