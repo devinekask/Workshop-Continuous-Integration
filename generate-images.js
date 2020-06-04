@@ -77,7 +77,7 @@ const generateIndexHtml = (images) => {
       ${images
         .map(
           (data) =>
-            `<a href="/${data.link}"><img src="${data.image}.png" src="${data.image}" /></a>`
+            `<a href="${data.link}"><img src="${data.image}.png" src="${data.image}" /></a>`
         )
         .join("")}
     </body>
