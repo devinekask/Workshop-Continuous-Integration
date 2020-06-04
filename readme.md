@@ -68,5 +68,6 @@ Rood
 Lichtblauw
 
 - Beperk je tot deze kleuren.
+- Als de instructie spreekt over verschillende kleuren en er zijn meer elementen dan dat er kleuren zijn, dan herhaal je de kleuren gewoon.
 - Probeer de volgorde te behouden waar het kan.
 - Je mag het lichtblauw ook vooraan extra toevoegen zodat je een reeks van 7 bekomt met hetzelfde start- en eindkleur.
