@@ -1,14 +1,34 @@
 import nc from "canvas";
 import fs from "fs";
 import path from "path";
+import util from "util";
+import stream from "stream";
 
 const solutionsPath = "./solutions";
 const canvas = nc.createCanvas(100, 100);
 const ctx = canvas.getContext("2d");
 
+const finished = util.promisify(stream.finished);
+
 if (!fs.existsSync("./build")) {
   fs.mkdirSync("./build");
 }
+
+const init = async () => {
+  const allFiles = getAllFiles(solutionsPath);
+  const regex = /solutions\/\d\d\d\/\w*\/solution\.js/g;
+  const processed = await Promise.all(
+    allFiles
+      .filter((file) => {
+        return regex.test(file);
+      })
+      .map(async (file) => {
+        const image = await createImageFromScript(file, ctx);
+        return { link: file.replace("solution.js", "index.html"), image };
+      })
+  );
+  generateIndexHtml(processed);
+};
 
 const createImageFromScript = async (file, ctx) => {
   const { default: draw } = await import(`./${file}`);
@@ -20,11 +40,11 @@ const createImageFromScript = async (file, ctx) => {
   const parts = regex.exec(file);
   const filename = `${parts[1]}-${parts[2]}`.toLowerCase();
   const out = fs.createWriteStream(`./build/${filename}.png`);
+
   const stream = canvas.createPNGStream();
   stream.pipe(out);
-  out.on("finish", () =>
-    console.log(`The PNG file -${filename}- was created.`)
-  );
+  await finished(out);
+  return filename;
 };
 
 const getAllFiles = function (dirPath, arrayOfFiles) {
@@ -43,12 +63,26 @@ const getAllFiles = function (dirPath, arrayOfFiles) {
   return arrayOfFiles;
 };
 
-const allFiles = getAllFiles(solutionsPath);
-const regex = /solutions\/\d\d\d\/\w*\/solution\.js/g;
-allFiles
-  .filter((file) => {
-    return regex.test(file);
-  })
-  .forEach(function (file) {
-    createImageFromScript(file, ctx);
-  });
+const generateIndexHtml = (images) => {
+  const html = `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Tech workshop</title>
+      <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+      ${images
+        .map(
+          (data) =>
+            `<a href="/${data.link}"><img src="${data.image}.png" src="${data.image}" /></a>`
+        )
+        .join("")}
+    </body>
+  </html>
+  `;
+  fs.writeFileSync("build/index.html", html);
+};
+
+init();
