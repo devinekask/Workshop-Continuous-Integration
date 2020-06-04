@@ -32,7 +32,10 @@ Laat niet na om een oplossing toe te voegen voor een instructie die al opgelost 
 - Pas de index.html aan met jouw naam en instructie nummer
 - Start een [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) (of dergelijke tool), ga naar jouw solution, zo kan je jouw resultaat zien.
 - Zorg er voor dat de tests slagen (`yarn test`)
-- Commit, push en doe een pull request op de originele repo.
+- Commit, start de commit message met #[issuenummer]
+  - Opgelet: dit nummer is **verschillend** dan het instructie nummer
+  - bv: `commit -m "#42 solution 007"`
+- push en doe een pull request op de originele repo.
 - Indien jouw pull request goed gekeurd is, volgt er een merge met de master. Jouw oplossing wordt dan automatisch toe gevoegd aan de startpagina.
 
 # Richtlijnen
