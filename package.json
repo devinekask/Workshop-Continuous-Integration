@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "node --experimental-modules ./generate-images.js",
+    "build": "node --experimental-modules ./build.js",
     "test": "jest"
   },
   "dependencies": {
