@@ -4,10 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "node --experimental-modules ./generate-images.js"
+    "build": "node --experimental-modules ./generate-images.js",
+    "test": "jest"
   },
   "dependencies": {
     "canvas": "^2.6.1"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.2",
+    "babel-polyfill": "^6.26.0",
+    "glob": "^7.1.6",
+    "jest": "^26.0.1"
+  }
 }
