@@ -1,0 +1,27 @@
+@import url(reset.css);
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.overview {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+}
+
+.detail {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  gap: 3em;
+}
+
+.detail p {
+  text-align: right;
+}

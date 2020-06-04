@@ -37,7 +37,7 @@ jobs:
       run: mkdir -p builds
 
     - name: generate all the images
-      run: node build.js
+      run: node generate-images.js
     
     - name: Commit images 
       run: |
