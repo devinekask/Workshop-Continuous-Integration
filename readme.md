@@ -36,7 +36,7 @@ Laat niet na om een oplossing toe te voegen voor een instructie die al opgelost 
   - Opgelet: dit nummer is **verschillend** dan het instructie nummer
   - bv: `commit -m "#42 solution 007"`
 - push en doe een pull request op de originele repo.
-- Indien jouw pull request goed gekeurd is, volgt er een merge met de master. Jouw oplossing wordt dan automatisch toe gevoegd aan de startpagina.
+- Indien jouw pull request goedgekeurd is, volgt er een merge met de master. Jouw oplossing wordt dan automatisch toegevoegd aan de startpagina.
 
 # Richtlijnen
 
