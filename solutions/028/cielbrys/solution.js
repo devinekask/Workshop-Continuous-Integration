@@ -1,28 +1,22 @@
 const draw = function (ctx) {
   function getDocumentWidth() {
-    return Math.max(
-      document.documentElement.clientWidth,
-      window.innerWidth || 0
-    );
+    return 100;
   }
 
   function getDocumentHeight() {
-    return Math.max(
-      document.documentElement.clientHeight,
-      window.innerHeight || 0
-    );
+    return 100;
   }
 
   const color = [
-    '#00695c',
-    '#2196f3',
-    '#0d47a1',
-    '#ef6c00',
-    '#b71c1c',
-    '#4fc3f7',
+    "#00695c",
+    "#2196f3",
+    "#0d47a1",
+    "#ef6c00",
+    "#b71c1c",
+    "#4fc3f7",
   ];
 
-  let getal = Math.floor(Math.random() * color.length)
+  let getal = Math.floor(Math.random() * color.length);
 
   let vw = getDocumentWidth();
   let vh = getDocumentHeight();
@@ -40,7 +34,7 @@ const draw = function (ctx) {
     }
   }
   drawDots();
-  return ctx
+  return ctx;
 };
 
 export default draw;
