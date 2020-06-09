@@ -1,4 +1,4 @@
-const draw = function (ctx, canvas) {
+const draw = function (ctx) {
   const colors = [
     "#4fc3f7",
     "#00695c",
@@ -9,7 +9,7 @@ const draw = function (ctx, canvas) {
     "#4fc3f7",
   ];
 
-  const width = canvas.width;
+  const width = 300;
   colors.forEach((color, index) => {
     for (var i = 0; i < 10; i += 1) {
       const randomPoint = Math.random() * width;
