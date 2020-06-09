@@ -12,6 +12,7 @@ h1 {
 .overview {
   width: 100vw;
   display: grid;
+  gap: 0.5rem;
   grid-template-columns: repeat(auto-fit, 100px);
 }
 

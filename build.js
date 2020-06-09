@@ -75,7 +75,7 @@ const generateIndexHtml = (images) => {
       <title>Tech workshop</title>
       <link rel="stylesheet" href="style.css" />
     </head>
-    <body>
+    <body class="overview">
       ${images
         .map(
           (data) =>
