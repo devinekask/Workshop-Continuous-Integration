@@ -20,3 +20,4 @@ const draw = function (ctx) {
 };
 
 export default draw;
+
