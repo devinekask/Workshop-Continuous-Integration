@@ -118,6 +118,3 @@ dist
 .pnp.*
 
 images/*
-
-
-.DS_Store
