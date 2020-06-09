@@ -18,12 +18,7 @@ const draw = function (ctx) {
     ctx.fillStyle = "#2196f3";
     ctx.fillRect(10, 50, 80, 2);
 
-   
-
-  
-
   return ctx;
 };
 
 export default draw;
-
