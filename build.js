@@ -5,8 +5,6 @@ import util from "util";
 import stream from "stream";
 
 const solutionsPath = "./solutions";
-const canvas = nc.createCanvas(100, 100);
-const ctx = canvas.getContext("2d");
 
 const finished = util.promisify(stream.finished);
 
@@ -23,7 +21,7 @@ const init = async () => {
         return regex.test(file);
       })
       .map(async (file) => {
-        const image = await createImageFromScript(file, ctx);
+        const image = await createImageFromScript(file);
         return { link: file.replace("solution.js", "index.html"), image };
       })
   );
@@ -31,8 +29,11 @@ const init = async () => {
   generateIndexHtml(processed);
 };
 
-const createImageFromScript = async (file, ctx) => {
+const createImageFromScript = async (file) => {
   const { default: draw } = await import(`./${file}`);
+  const canvas = nc.createCanvas(100, 100);
+  let ctx = canvas.getContext("2d");
+
   ctx.clearRect(0, 0, 100, 100);
   ctx = draw(ctx);
 
