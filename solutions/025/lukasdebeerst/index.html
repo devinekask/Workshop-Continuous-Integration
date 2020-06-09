@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../style/style.css" />
+    <title>Solution 025</title>
+  </head>
+  <body class="detail">
+    <h1>
+      <a
+        href="https://github.com/devinekask/Workshop-Continuous-Integration/issues/[ISSUE NUMMER]"
+      >
+      025</a
+      >
+    </h1>
+    <canvas width="300" height="300"></canvas>
+    <p>Lukas Debeerst</p>
+    <script type="module">
+      import draw from "./solution.js";
+      const canvas = document.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+      ctx.scale(3, 3);
+      draw(ctx);
+    </script>
+  </body>
+</html>
